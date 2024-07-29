@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quizz_game/constants/styles.dart';
 import 'package:quizz_game/domain/data/quizzCards.dart';
-import 'package:quizz_game/domain/entity/quizz_card.dart';
 import 'package:quizz_game/view/presentation/widget/how_to_play.dart';
 import 'package:quizz_game/view/presentation/widget/quizz_card.dart';
 
@@ -37,6 +34,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                
                   HowToPlay(
                     title: "How to play",
                   )

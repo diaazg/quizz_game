@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quizz_game/view/presentation/widget/quizz_card.dart';
 
 class QuizzCardData {
   String title;
