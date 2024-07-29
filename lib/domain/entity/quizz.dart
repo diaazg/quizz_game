@@ -1,6 +1,7 @@
 import 'package:quizz_game/domain/entity/Question.dart';
 
 class Quizz{
+  
   String title ;
   List<Question> questions;
   int _currentQuestion = 1 ;
@@ -9,6 +10,7 @@ class Quizz{
   bool _end = false ;
 
   Quizz({required this.title, required this.questions});
+
 
   bool validationAnswer(String answer , int question){
 
@@ -31,11 +33,21 @@ class Quizz{
     }
 
   }
+  
+  
+  set setIncrementWrong(int previousWrong){
+    checkEnd();
+    _wrongAnswers = previousWrong++ ;
+  }
+  
+
+  
 
   int get getCorrectAnswers => _correctAnswers;
 
   int get getWrongAnswers => _wrongAnswers;
 
   bool get getEnd => _end;
+
 
 }
