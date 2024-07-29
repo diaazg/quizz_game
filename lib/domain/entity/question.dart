@@ -6,6 +6,7 @@ class Question<T>{
   List<T> _suggestions = [];
 
 
+
   Question({required this.title,required this.duration,required this.answer,required List<T> suggestions}){
     this.setSuggestions = suggestions ;
   }
