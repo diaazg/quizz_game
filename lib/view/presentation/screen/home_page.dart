@@ -24,8 +24,10 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Container(
                     height: 250,
-                    decoration: const BoxDecoration(
-                        color: Colors.purple,
+                    decoration:  const BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/back.png")),
                         borderRadius:
                             BorderRadius.vertical(bottom: Radius.circular(30))),
                     child: const Center(
