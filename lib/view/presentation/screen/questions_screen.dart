@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:quizz_game/constants/styles.dart';
+import 'package:quizz_game/domain/entity/quizz.dart';
 import 'package:quizz_game/view/presentation/widget/question_screen_header.dart';
 import 'package:quizz_game/view/presentation/widget/submession_button.dart';
 import 'package:quizz_game/view/presentation/widget/suggestion_box.dart';
 
 class QuestionScreen extends StatefulWidget {
-  QuestionScreen({super.key});
-
+  QuestionScreen({super.key, required this.quizz});
+  Quizz quizz;
   @override
   State<QuestionScreen> createState() => _QuestionScreenState();
 }
@@ -16,12 +16,19 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> suggestions = ["option 1", "option 2", "option 3", "option 4"];
+    List<dynamic> suggestions =
+        widget.quizz.questions[widget.quizz.getCurrentIndex].getSuggestions.sublist(0,4);
+
     return SafeArea(
       child: Scaffold(
         body: Column(
           children: [
-            const QuestionHeader(),
+            QuestionHeader(
+              numberOfQuestions: widget.quizz.questions.length,
+              currentIndex: widget.quizz.getCurrentIndex,
+              question:
+                  widget.quizz.questions[widget.quizz.getCurrentIndex].title,
+            ),
             const SizedBox(
               height: 50,
             ),
@@ -44,7 +51,18 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 );
               }),
             ),
-            SubmessionButton(title:  "Submit")
+            GestureDetector(
+              onTap: (){
+                if(current != 5 && !widget.quizz.getEnd){
+                  setState(() {
+                    widget.quizz.validationAnswer(suggestions[current], widget.quizz.getCurrentIndex);
+                    current = 5;
+                  });
+                }else if(widget.quizz.getEnd){
+                  // TODO: implement result
+                }
+              },
+              child: SubmessionButton(title:widget.quizz.getEnd?"Submit":"Next"))
           ],
         ),
       ),
@@ -52,3 +70,5 @@ class _QuestionScreenState extends State<QuestionScreen> {
   }
 }
 
+
+  

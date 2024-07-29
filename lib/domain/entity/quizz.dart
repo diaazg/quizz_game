@@ -1,10 +1,10 @@
-import 'package:quizz_game/domain/entity/Question.dart';
+import 'package:quizz_game/domain/entity/question.dart';
 
 class Quizz{
   
   String title ;
-  List<Question> questions;
-  int _currentQuestion = 1 ;
+  List<Question<dynamic>> questions;
+  int _currentQuestion = 0 ;
   int _correctAnswers = 0;
   int _wrongAnswers = 0 ;
   bool _end = false ;
@@ -28,7 +28,7 @@ class Quizz{
   
   void checkEnd(){
        
-    if(_currentQuestion==questions.length){
+    if(_currentQuestion==questions.length-1){
       _end=true;
     }
 
@@ -47,7 +47,10 @@ class Quizz{
 
   int get getWrongAnswers => _wrongAnswers;
 
+  int get getCurrentIndex => _currentQuestion;
+
   bool get getEnd => _end;
+
 
 
 }

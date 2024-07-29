@@ -3,9 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:quizz_game/constants/styles.dart';
 
 class QuestionHeader extends StatelessWidget {
-  const QuestionHeader({
+   QuestionHeader({
     super.key,
+    required this.numberOfQuestions,
+    required this.currentIndex,
+    required this.question
   });
+
+  int numberOfQuestions;
+  int currentIndex;
+  String question;
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +54,12 @@ class QuestionHeader extends StatelessWidget {
             ],
           ),
           Text(
-            "1/10",
+            "${currentIndex+1}/$numberOfQuestions",
             style: mainTitle.copyWith(fontSize: 80),
           ),
           Text(
             maxLines: 2,
-            "How many students in your class from korea?",
+            question,
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             style: mainTitle.copyWith(fontSize: 20),

@@ -1,4 +1,4 @@
-
+// ignore: file_names
 class Question<T>{
   String title;
   String answer ;
