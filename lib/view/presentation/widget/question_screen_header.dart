@@ -7,13 +7,14 @@ class QuestionHeader extends StatelessWidget {
     super.key,
     required this.numberOfQuestions,
     required this.currentIndex,
-    required this.question
+    required this.question,
+    required this.duration
   });
 
   int numberOfQuestions;
   int currentIndex;
   String question;
-
+  int duration;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,24 +28,24 @@ class QuestionHeader extends StatelessWidget {
               BorderRadius.vertical(bottom: Radius.circular(30))),
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(
+              const Icon(
                 Icons.arrow_back_outlined,
                 color: Colors.white,
                 size: 40,
               ),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.access_time_rounded,
                     color: Colors.white,
                     size: 40,
                   ),
                   Text(
-                    "  01:30  ",
-                    style: TextStyle(
+                    "  $duration  ",
+                    style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w900,
                         color: Colors.white),

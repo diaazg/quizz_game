@@ -2,7 +2,7 @@
 class Question<T>{
   String title;
   String answer ;
-  Duration duration;
+  int duration;
   List<T> _suggestions = [];
 
 

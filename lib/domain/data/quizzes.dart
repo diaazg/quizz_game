@@ -3,7 +3,7 @@
  List<Question<dynamic>> techQuestions = [
     Question<String>(
       title: 'What is Flutter?',
-      duration: const Duration(minutes: 5),
+      duration: 30,
       answer: 'UI toolkit',
       suggestions: [
         'UI toolkit',
@@ -18,7 +18,7 @@
     ),
     Question<String>(
       title: 'What is Dart?',
-      duration: const Duration(minutes: 4),
+      duration: 15,
       answer: 'Language',
       suggestions: [
         'Language',
@@ -33,7 +33,7 @@
     ),
     Question<String>(
       title: 'What is a REST API?',
-      duration: const Duration(minutes: 6),
+      duration: 10,
       answer: 'Interface',
       suggestions: [
         'Interface',
@@ -49,7 +49,7 @@
     ),
     Question<String>(
       title: 'What is GraphQL?',
-      duration: const Duration(minutes: 7),
+      duration: 12,
       answer: 'Query',
       suggestions: [
         'Query',
@@ -64,7 +64,7 @@
     ),
     Question<String>(
       title: 'What is Kubernetes?',
-      duration: const Duration(minutes: 8),
+      duration: 11,
       answer: 'Orchestration',
       suggestions: [
         'Orchestration',
@@ -79,7 +79,7 @@
     ),
     Question<String>(
       title: 'What is Docker?',
-      duration: const Duration(minutes: 5),
+      duration: 13,
       answer: 'Containers',
       suggestions: [
         'Containers',
@@ -94,7 +94,7 @@
     ),
     Question<String>(
       title: 'What is CI/CD?',
-      duration: const Duration(minutes: 6),
+      duration: 13,
       answer: 'Automation',
       suggestions: [
         'Automation',
@@ -109,7 +109,7 @@
     ),
     Question<String>(
       title: 'What is DevOps?',
-      duration: const Duration(minutes: 7),
+      duration: 14,
       answer: 'Collaboration',
       suggestions: [
         'Collaboration',
@@ -124,7 +124,7 @@
     ),
     Question<String>(
       title: 'What is Agile methodology?',
-      duration: const Duration(minutes: 5),
+      duration: 14,
       answer: 'Flexible',
       suggestions: [
         'Flexible',
@@ -139,7 +139,7 @@
     ),
     Question<String>(
       title: 'What is Scrum?',
-      duration: const Duration(minutes: 4),
+      duration: 11,
       answer: 'Framework',
       suggestions: [
         'Framework',
