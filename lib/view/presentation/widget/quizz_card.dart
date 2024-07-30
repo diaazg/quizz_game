@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quizz_game/constants/other.dart';
 import 'package:quizz_game/domain/entity/quizz.dart';
 import 'package:quizz_game/domain/entity/quizz_card.dart';
 import 'package:quizz_game/view/presentation/screen/questions_screen.dart';
@@ -58,7 +59,7 @@ class QuizzCard extends StatelessWidget {
               )
             ],
           ),
-          Image.asset("assets/images/${data.picture}.png")
+          Image.asset("$imagesPath/${data.picture}.png")
         ],
       ),
     );

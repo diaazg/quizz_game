@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:quizz_game/domain/entity/quizz.dart';
+import 'package:quizz_game/view/presentation/screen/result_screen.dart';
 import 'package:quizz_game/view/presentation/widget/question_screen_header.dart';
 import 'package:quizz_game/view/presentation/widget/submession_button.dart';
 import 'package:quizz_game/view/presentation/widget/suggestion_box.dart';
@@ -26,9 +27,13 @@ class _QuestionScreenState extends State<QuestionScreen> {
             timer.cancel();
             if (widget.quizz.getEnd) {
               widget.quizz.setIncrementWrong = 1;
-              print("End of game time over");
-              print(
-                  "Correct answers : ${widget.quizz.getCorrectAnswers} \n  Wrong answers : ${widget.quizz.getWrongAnswers}");
+
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Result(
+                          correct: widget.quizz.getCorrectAnswers,
+                          wrong: widget.quizz.getWrongAnswers)));
             } else {
               widget.quizz.setIncrementWrong = 1;
               resetTimer();
@@ -78,7 +83,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
       onWillPop: () async {
         if (_timer != null) {
           _timer!.cancel();
-          
         }
         widget.quizz.reset();
         return true;
@@ -133,14 +137,19 @@ class _QuestionScreenState extends State<QuestionScreen> {
                             suggestions[current], widget.quizz.getCurrentIndex);
                         current = 5;
                         _timer!.cancel();
-                        print("End of game");
-                        print(
-                            "Correct answers : ${widget.quizz.getCorrectAnswers} \n  Wrong answers : ${widget.quizz.getWrongAnswers}");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Result(
+                                    correct: widget.quizz.getCorrectAnswers,
+                                    wrong: widget.quizz.getWrongAnswers)));
                       });
                     }
                   },
                   child: SubmessionButton(
-                      title: widget.quizz.getEnd ? "Submit" : "Next"))
+                    title: widget.quizz.getEnd ? "Submit" : "Next",
+                    backColor: Colors.purple,
+                  ))
             ],
           ),
         ),

@@ -5,10 +5,12 @@ import 'package:quizz_game/constants/styles.dart';
 class SubmessionButton extends StatelessWidget {
   SubmessionButton({
     super.key,
-    required this.title
+    required this.title,
+    required this.backColor
   });
 
   String title;
+  Color backColor;
   
   @override
   Widget build(BuildContext context) {
@@ -17,13 +19,13 @@ class SubmessionButton extends StatelessWidget {
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
       decoration:BoxDecoration(
-        color: Colors.purple,
+        color: backColor,
         borderRadius: BorderRadius.circular(20)
       ),
       child:  Center(
         child: Text(
          title,
-          style: mainTitle,
+          style: mainTitle.copyWith(color: backColor==Colors.purple?Colors.white:Colors.purple),
         ),
       ),
     );

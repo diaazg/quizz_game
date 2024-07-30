@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quizz_game/constants/other.dart';
 import 'package:quizz_game/constants/styles.dart';
 
 class QuestionHeader extends StatelessWidget {
@@ -23,7 +24,7 @@ class QuestionHeader extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage("assets/images/back.png")),
+              image: AssetImage("$imagesPath/back.png")),
           borderRadius:
               BorderRadius.vertical(bottom: Radius.circular(30))),
       child: Column(
