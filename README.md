@@ -2,8 +2,8 @@
 
 A modern, interactive quiz application built with Flutter, designed to demonstrate Object-Oriented Programming (OOP) principles and best practices in mobile app development.
 
-## 📱 Screenshots
-
+## 📱 Design
+![![Screenshot](screenshot.jpg)](design.jpg)
 
 
 ## 🎯 Project Overview
