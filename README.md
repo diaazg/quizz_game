@@ -8,7 +8,7 @@ A modern, interactive quiz application built with Flutter, designed to demonstra
 
 ## 🎯 Project Overview
 
-This Flutter application was developed as part of a Flutter formation program where I served as a mentor. The primary goal was to showcase the implementation and efficiency of Object-Oriented Programming principles in organizing a Flutter project.
+This Flutter application was developed as a comprehensive teaching tool during a Flutter formation program where I served as the mentor and instructor. I created and designed this app to demonstrate the implementation and efficiency of Object-Oriented Programming principles in organizing a Flutter project, providing my students with a practical, real-world example of professional mobile development practices.
 
 ### Key Learning Objectives
 - Demonstrate clean code architecture using OOP principles
